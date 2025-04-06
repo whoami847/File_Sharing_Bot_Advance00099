@@ -1,7 +1,9 @@
 from pyrogram import Client, filters
-from fancy_font import to_fancy
 
-@Client.on_message(filters.command('encode'))
-async def encode_video(client, message):
-    # Logic for video encoding
-    await message.reply(to_fancy("Video encoding started..."))
+async def media_handler(client, message):
+    if message.photo:
+        await message.reply("Nice photo!")
+    elif message.video:
+        await message.reply("Nice video!")
+    else:
+        await message.reply("Send a photo or video.")
