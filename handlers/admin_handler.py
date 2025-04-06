@@ -1,8 +1,8 @@
 from pyrogram import Client, filters
-from fancy_font import to_fancy
+from config import ADMIN_ID
 
-@Client.on_message(filters.command('ban'))
-async def ban_user(client, message):
+async def admin_handler(client, message):
     if message.from_user.id == ADMIN_ID:
-        # Logic to ban a user
-        await message.reply(to_fancy("User has been banned"))
+        await message.reply("Welcome, admin!")
+    else:
+        await message.reply("You are not an admin.")
