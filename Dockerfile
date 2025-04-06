@@ -17,6 +17,9 @@ WORKDIR /app
 # Copy project files into container
 COPY . /app
 
+# Copy the .env file (important for environment variables)
+COPY .env /app/.env
+
 # Install dependencies from requirements.txt
 RUN pip install --no-cache-dir -r requirements.txt
 
