@@ -17,4 +17,4 @@ fancy_font = {
 }
 
 def to_fancy(text):
-    return ''.join(fancy_font.get(c.lower(), c) for c in text)
+    return ''.join([f"{char}" for char in text])
