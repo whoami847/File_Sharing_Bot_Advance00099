@@ -1,12 +1,14 @@
-pyrogram==1.4.16
-tgcrypto==1.2.0
-pymongo==4.3.3
-dnspython==2.2.1
-flask==2.0.2
-python-dotenv==0.19.2
-loguru==0.5.3
-aiofiles==0.8.0
-requests==2.26.0
-Pillow==8.4.0
-ffmpeg-python==0.2.0
-moviepy==1.0.3
+# Base image
+FROM python:3.9-slim
+
+# Set working directory
+WORKDIR /app
+
+# Copy project files into container
+COPY . /app
+
+# Install dependencies from requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Command to run the bot
+CMD ["python", "bot.py"]
