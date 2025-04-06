@@ -1,9 +1,12 @@
-FROM python:3.9-slim
-
-WORKDIR /app
-
-COPY . /app
-
-RUN pip install --no-cache-dir -r requirements.txt
-
-CMD ["python", "bot.py"]
+pyrogram==1.4.16
+tgcrypto==1.2.0
+pymongo==4.3.3
+dnspython==2.2.1
+flask==2.0.2
+python-dotenv==0.19.2
+loguru==0.5.3
+aiofiles==0.8.0
+requests==2.26.0
+Pillow==8.4.0
+ffmpeg-python==0.2.0
+moviepy==1.0.3
